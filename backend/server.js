@@ -2,7 +2,10 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path')
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
+
+const { TOKEN_SECRET } = process.env;
 
 const adminRouter = require('./routes/admin');
 const studentRouter = require('./routes/students');
@@ -18,6 +21,11 @@ require('./db/connect_mongo');
 app.get('/', (req, res) => {
   res.redirect('/views/home.html');
 });
+
+app.get('/token', (req, res) => {
+  const token = jwt.sign({id: 'adfasdf'}, TOKEN_SECRET, {expiresIn: 3600});
+  res.send({token});
+})
 
 app.use('/admin', adminRouter);
 app.use('/students', verifyAdmin, studentRouter);
