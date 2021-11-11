@@ -1,0 +1,104 @@
+{
+  "students": [
+    {
+      "_id": "618cfec3e27fb48a3de1a362",
+      "name": "Erika De Santiago",
+      "birth": "2021-11-11T11:30:11.460Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698470@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff7003e82b7d1d3e88a7",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:04.774Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698471@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff7403e82b7d1d3e88a9",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:08.235Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698472@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff7703e82b7d1d3e88ab",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:11.667Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698473@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff7a03e82b7d1d3e88ad",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:14.791Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698474@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff7e03e82b7d1d3e88af",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:17.989Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698475@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff8203e82b7d1d3e88b1",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:22.723Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698477@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff8603e82b7d1d3e88b3",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:26.442Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698476@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff8a03e82b7d1d3e88b5",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:30.350Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698478@iteso.mx",
+      "__v": 0
+    },
+    {
+      "_id": "618cff8e03e82b7d1d3e88b7",
+      "name": "Erick De Santiago",
+      "birth": "2021-11-11T11:33:34.046Z",
+      "favoriteColor": "red",
+      "score": 10,
+      "favoriteCourse": "DASW",
+      "email": "is698479@iteso.mx",
+      "__v": 0
+    }
+  ]
+}
