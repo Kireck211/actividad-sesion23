@@ -18,7 +18,7 @@ function addListeners() {
         location.href = '/views/students.html'
       },
       error: function(xhr) {
-        bootbox.box('No tienes permiso para guardar un usuario');
+        bootbox.alert('No tienes permiso para guardar un usuario');
       },
       complete: function() {
         $('button').removeAttr('disabled');

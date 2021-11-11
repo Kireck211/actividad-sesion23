@@ -1,7 +1,3 @@
-function getToken() {
-  return localStorage.getItem('token') || '';
-}
-
 function deleteUser(id) {
   $.ajax({
     method: 'DELETE',
@@ -29,11 +25,16 @@ function addListeners() {
   });
 }
 
+function parseDate() {
+  const date =  new Date();
+  return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+}
+
 function insertRow(student) {
   return `
   <tr>
     <td>${student.name}</td>
-    <td>${new Date(student.birth).getDate()}</td>
+    <td>${parseDate(new Date(student.birth))}</td>
     <td>${student.favoriteColor}</td>
     <td>${student.score}</td>
     <td>${student.favoriteCourse}</td>
