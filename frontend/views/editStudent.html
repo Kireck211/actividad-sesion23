@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar estudiante</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="../css/editStudent.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/views/students.html">Estudiantes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/views/login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/views/register.html">Register</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="birth">Fecha de nacimiento</label>
+            <input type="datetime" class="form-control" id="birth" name="birth" required>
+          </div>
+          <div class="form-group">
+            <label for="favoriteColor">Color favorito</label>
+            <select name="favoriteColor" id="favoriteColor" class="form-control" required>
+              <option value="red">Verde</option>
+              <option value="orange">Naranja</option>
+              <option value="yellow">Amarillo</option>
+              <option value="green">Verde</option>
+              <option value="blue">Azul</option>
+              <option value="indigo">Índigo</option>
+              <option value="violet">Violeta</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="score">Promedio</label>
+            <input type="text" class="form-control" id="score" name="score" required>
+          </div>
+          <div class="form-group">
+            <label for="favoriteCourse">Curso favorito</label>
+            <input type="text" class="form-control" id="favoriteCourse" name="favoriteCourse" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="../js/editStudent.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+.landing {
+  background-image: url('https://iteso.mx/image/journal/article?img_id=17941745&t=1572917936907');
+  width: 100%;
+  height: calc(100vh - 56px);
+  background-size: cover;
+  background-position: center;
+}
