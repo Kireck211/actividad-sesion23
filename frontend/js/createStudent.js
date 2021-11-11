@@ -12,6 +12,9 @@ function addListeners() {
       method: 'POST',
       url: '/students',
       contentType: 'application/json',
+      headers: {
+        'x-auth': getToken()
+      },
       data: JSON.stringify(data),
       success: function(data) {
         bootbox.alert('Estudiante guardado!');

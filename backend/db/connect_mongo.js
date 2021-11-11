@@ -8,7 +8,8 @@ if (NODE_ENV === 'development') {
 
 mongoose.connect(DB_URL)
   .then(() => console.log('Connected to database'))
-  .catch(() => {
+  .catch((err) => {
+    console.log(err);
     console.log('Could not connect to database');
     process.exit(1);
   });

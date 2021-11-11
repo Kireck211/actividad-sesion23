@@ -1,4 +1,4 @@
-function deleteUser(id) {
+function deleteUser(id, $tr) {
   $.ajax({
     method: 'DELETE',
     url: '/students/' + id,
@@ -7,6 +7,9 @@ function deleteUser(id) {
     },
     success: function() {
       bootbox.alert('El estudiante ha sido eliminado');
+      $tr.fadeOut(function() {
+        $(this).remove();
+      })
     },
     error: function() {
       bootbox.alert('No tienes permiso para borrar el usuario')
@@ -15,14 +18,19 @@ function deleteUser(id) {
 }
 
 function addListeners() {
-  $('.btn-info').on('click', () => {
-    location.href = '/views/editStudent.html'
-  });
-  $('.btn-danger').on('click', () => {
-    const $tr = $(this).closest('tr');
+  $('table').on('click', function(event) {
+    const $element = $(event.target);
+    const $tr = $element.closest('tr');
     const id = $tr.data('id');
-    deleteUser(id);
+    if ($element.hasClass('btn-info')) {
+      location.href = `/views/editStudent.html?id=${id}`;
+    } else if ($element.hasClass('btn-danger')) {
+      deleteUser(id, $tr);
+    }
   });
+  $('button.add-new').on('click', (event) => {
+    location.href = '/views/createStudent.html'
+  })
 }
 
 function parseDate() {
@@ -77,13 +85,8 @@ async function getStudents() {
 }
 
 async function main() {
-  $('tr').on('click', () => {
-    location.href = "/views/editStudent.html";
-  });
-  $('button').on('click', () => {
-    location.href = "/views/createStudent.html";
-  });
   getStudents();
+  addListeners();
 }
 
 $(function() {

@@ -54,7 +54,7 @@ router.delete('/:id', (req, res) => {
         return res.send({student});
       }
       res.status(404).send('Student not found')
-    })
+    });
 });
 
 module.exports = router;

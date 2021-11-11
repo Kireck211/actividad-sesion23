@@ -8,6 +8,8 @@ function getStudent(id) {
     success: function({student}) {
       Object.keys(student)
         .forEach(property => {
+          if (property === 'birth')
+            student[property] = student[property].substring(0, student[property].length - 8);
           $(`#${property}`).val(student[property]);
         });
     },
@@ -29,16 +31,19 @@ function addListeners() {
     $('button').attr('disabled', 'disabled');
 
     $.ajax({
-      method: 'POST',
-      url: '/students',
+      method: 'PUT',
+      url: `/students/${qs('id')}`,
       contentType: 'application/json',
       data: JSON.stringify(data),
+      headers: {
+        'x-auth': getToken()
+      },
       success: function(data) {
         bootbox.alert('Estudiante guardado!');
         location.href = '/views/students.html'
       },
       error: function(xhr) {
-        bootbox.box('No tienes permiso para guardar un usuario');
+        bootbox.alert('No tienes permiso para guardar un usuario');
       },
       complete: function() {
         $('button').removeAttr('disabled');
@@ -49,6 +54,8 @@ function addListeners() {
 
 async function main() {
   addListeners();
+  const id = qs('id')
+  getStudent(id);
 }
 
 $(function() {
