@@ -16,14 +16,14 @@ function addListeners() {
         'x-auth': getToken()
       },
       data: JSON.stringify(data),
-      success: function(data) {
+      success: (data) => {
         bootbox.alert('Estudiante guardado!');
         location.href = '/views/students.html'
       },
-      error: function(xhr) {
+      error: (xhr) => {
         bootbox.alert('No tienes permiso para guardar un usuario');
       },
-      complete: function() {
+      complete: () => {
         $('button').removeAttr('disabled');
       }
     })

@@ -5,7 +5,7 @@ function getStudent(id) {
     headers: {
       'x-auth': getToken()
     },
-    success: function({student}) {
+    success: ({student}) => {
       Object.keys(student)
         .forEach(property => {
           if (property === 'birth')
@@ -13,8 +13,8 @@ function getStudent(id) {
           $(`#${property}`).val(student[property]);
         });
     },
-    error: function() {
-      bootbox.alert('No tienes permiso para ver está página, por favor inicia sesión', function() {
+    error: () => {
+      bootbox.alert('No tienes permiso para ver está página, por favor inicia sesión', () => {
         location.href = '/views/login.html'
       });
     }
@@ -39,14 +39,14 @@ function addListeners() {
       headers: {
         'x-auth': getToken()
       },
-      success: function(data) {
+      success: (data)  => {
         bootbox.alert('Estudiante guardado!');
         location.href = '/views/students.html'
       },
-      error: function(xhr) {
+      error: (xhr) => {
         bootbox.alert('No tienes permiso para guardar un usuario');
       },
-      complete: function() {
+      complete: () => {
         $('button').removeAttr('disabled');
       }
     })

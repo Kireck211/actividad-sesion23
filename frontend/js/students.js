@@ -5,20 +5,20 @@ function deleteUser(id, $tr) {
     headers: {
       'x-auth': getToken()
     },
-    success: function() {
+    success: () => {
       bootbox.alert('El estudiante ha sido eliminado');
       $tr.fadeOut(function() {
         $(this).remove();
       })
     },
-    error: function() {
+    error: () => {
       bootbox.alert('No tienes permiso para borrar el usuario')
     }
   })
 }
 
 function addListeners() {
-  $('table').on('click', function(event) {
+  $('table').on('click', (event) => {
     const $element = $(event.target);
     const $tr = $element.closest('tr');
     const id = $tr.data('id');
@@ -73,10 +73,10 @@ async function getStudents() {
     headers: {
       'x-auth': getToken()
     },
-    success: function(data) {
+    success: (data) => {
       insertStudents(data);
     },
-    error: function(xhr) {
+    error: (xhr) => {
       bootbox.alert('No tienes permisos para ver los estudiantes, por favor inicia sesión', () => {
         location.href = '/views/login.html'
       });

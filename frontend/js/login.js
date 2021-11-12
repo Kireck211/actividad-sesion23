@@ -13,17 +13,17 @@ $(function() {
       url: 'http://localhost:3000/admin/login',
       contentType: 'application/json',
       data: JSON.stringify(data),
-      success: function(data) {
+      success: (data) => {
         const {token} = data;
         localStorage.setItem('token', token);
         location.href = 'http://localhost:3000/views/students.html'
       },
-      error: function(xhr) {
+      error: (xhr) => {
         if (xhr.status === 403) {
           bootbox.alert('Correo o contraseña equivocados');
         }
       },
-      complete: function() {
+      complete: () => {
         $('button').removeAttr('disabled');
       }
     })

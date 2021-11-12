@@ -16,7 +16,7 @@ if (process.env.NODE_ENV !== 'development') {
     }
   }, { collection: 'admins'});
   
-  adminSchema.pre('save', function(next) {
+  adminSchema.pre('save', (next) => {
     const hash = bcrypt.hashSync(this.password, 10);
     this.password = hash;
     next();
