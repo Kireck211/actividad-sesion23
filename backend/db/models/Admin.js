@@ -13,7 +13,7 @@ const adminSchema = new mongoose.Schema({
   }
 }, { collection: 'admins'});
 
-adminSchema.pre('save', (next) => {
+adminSchema.pre('save', function(next) {
   const hash = bcrypt.hashSync(this.password, 10);
   this.password = hash;
   next();

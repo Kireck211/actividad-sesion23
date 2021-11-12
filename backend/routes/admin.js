@@ -25,8 +25,9 @@ router.post('/login', async (req, res) => {
 router.post('/register', async (req, res) => {
   try {
     const admin = new Admin(req.body);
-    const user = await admin.save();
-    res.status(201).send();
+    await admin.save();
+    const token = jwt.sign({id: admin._id}, TOKEN_SECRET, {expiresIn: 60 * 60});
+    res.send({token});
   } catch (err) {
     console.log(err);
     res.status(500).send('Ooops algo salió mal');

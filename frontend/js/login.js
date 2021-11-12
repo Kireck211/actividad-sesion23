@@ -10,7 +10,7 @@ $(function() {
     
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3000/admin/login',
+      url: '/admin/login',
       contentType: 'application/json',
       data: JSON.stringify(data),
       success: (data) => {
