@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
-const { DB_URL, NODE_ENV } = process.env;
-
-if (NODE_ENV === 'development') {
-  return;
-}
+const { DB_URL } = process.env;
 
 mongoose.connect(DB_URL)
   .then(() => console.log('Connected to database'))
