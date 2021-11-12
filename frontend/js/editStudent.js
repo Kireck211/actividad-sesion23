@@ -14,8 +14,9 @@ function getStudent(id) {
         });
     },
     error: function() {
-      bootbox.alert('No tienes permiso para ver está página, por favor inicia sesión');
-      location.href = '/views/admin/login'
+      bootbox.alert('No tienes permiso para ver está página, por favor inicia sesión', function() {
+        location.href = '/views/login.html'
+      });
     }
   })
 }

@@ -22,12 +22,15 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/register', (req, res) => {
-  const admin = new Admin(req.body);
-  admin.save()
-  .then(() => {
-    res.send('Ok')
-  });
+router.post('/register', async (req, res) => {
+  try {
+    const admin = new Admin(req.body);
+    const user = await admin.save();
+    res.status(201).send();
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Ooops algo salió mal');
+  }
 })
 
 module.exports = router;
