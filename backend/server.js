@@ -2,10 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const path = require('path')
-const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-const { TOKEN_SECRET } = process.env;
+const { PORT } = process.env;
 
 const adminRouter = require('./routes/admin');
 const studentRouter = require('./routes/students');
@@ -31,4 +30,4 @@ app.use('/students', verifyAdmin, studentRouter);
 
 app.use(express.static(path.resolve(__dirname, '../frontend')));
 
-app.listen(3000, () => console.log(`Listening on port 3000`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
