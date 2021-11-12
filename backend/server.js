@@ -22,9 +22,8 @@ app.get('/', (req, res) => {
   res.redirect('/views/home.html');
 });
 
-app.get('/token', (req, res) => {
-  const token = jwt.sign({id: 'adfasdf'}, TOKEN_SECRET, {expiresIn: 3600});
-  res.send({token});
+app.get('/test', (req, res) => {
+  res.send('Ok');
 })
 
 app.use('/admin', adminRouter);
