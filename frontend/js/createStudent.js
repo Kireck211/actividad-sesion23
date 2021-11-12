@@ -13,7 +13,7 @@ function addListeners() {
       url: '/students',
       contentType: 'application/json',
       headers: {
-        'x-auth': getToken()
+        // 4.2 Agrega header: 'x-auth': getToken()
       },
       data: JSON.stringify(data),
       success: (data) => {

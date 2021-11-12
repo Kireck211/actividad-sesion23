@@ -1,9 +1,9 @@
 function deleteUser(id, $tr) {
   $.ajax({
-    method: 'DELETE',
-    url: '/students/' + id,
+    method: '', // 6.2 Ingresa el método adecuado para borrar un estudiante
+    url: '', // 6.3 Ingresa la url adecuada para borrar un esudiante (importante: debe de contener el id en algún lugar)
     headers: {
-      'x-auth': getToken()
+      // 6.4 Agrega el header adecuado para obtener el permiso de borrar 
     },
     success: () => {
       bootbox.alert('El estudiante ha sido eliminado');

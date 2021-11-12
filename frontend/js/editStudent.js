@@ -22,7 +22,7 @@ function getStudent(id) {
 }
 
 function addListeners() {
-  $('form').on('submit', (event) => {
+  $('form').on('', (event) => { // 5.2 Agrega el evento correspondiente para escuchar submit en un form
     event.preventDefault();
     const data = $('form').serializeArray().reduce((obj, input) => {
       obj[input.name] = input.value;
@@ -32,7 +32,7 @@ function addListeners() {
     $('button').attr('disabled', 'disabled');
 
     $.ajax({
-      method: 'PUT',
+      method: '', // 5.2 Agrega el método correspondiente para editar un estudiante
       url: `/students/${qs('id')}`,
       contentType: 'application/json',
       data: JSON.stringify(data),
@@ -41,7 +41,7 @@ function addListeners() {
       },
       success: (data)  => {
         bootbox.alert('Estudiante guardado!');
-        location.href = '/views/students.html'
+        // 5.3 Redirecciona el usuario location.href = <url_tabla_estudiantes>
       },
       error: (xhr) => {
         bootbox.alert('No tienes permiso para guardar un usuario');

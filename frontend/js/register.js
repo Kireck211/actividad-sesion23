@@ -11,14 +11,14 @@ $(function() {
 
     $.ajax({
       method: 'POST',
-      url: '/admin/register',
+      url: '', // 2.1. Agrega la correcta url
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: (data) => {
         const {token} = data;
         if (token) {
-          localStorage.setItem('token', token);
-          location.href = '/views/students.html'
+          // 2.2. Guarda el token en localStorage con la llave 'token'
+          // 2.3. Redirige al usuario a la vista de los estudiantes '/views/students.html'
         }
       },
       error: (xhr) => {

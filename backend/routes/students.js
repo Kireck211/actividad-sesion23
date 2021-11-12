@@ -12,16 +12,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/short', async (req, res) => {
-  try {
-    const students = await Student.find({});
-    res.send({students: students.slice(0, 2)});
-  } catch (err) {
-    console.log(err);
-    res.status(500).send('Ooops algo salió mal');
-  }
-});
-
 router.get('/:id', async (req, res) => {
   try {
     const {id} = req.params;

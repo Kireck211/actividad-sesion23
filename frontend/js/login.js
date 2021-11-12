@@ -10,13 +10,15 @@ $(function() {
     
     $.ajax({
       method: 'POST',
-      url: '/admin/login',
+      url: '', // 3.1. Agrega la correcta url
       contentType: 'application/json',
       data: JSON.stringify(data),
       success: (data) => {
         const {token} = data;
-        localStorage.setItem('token', token);
-        location.href = 'http://localhost:3000/views/students.html'
+        if (token) {
+          // 3.2. Guarda el token en localStorage con la llave 'token'
+          // 3.3. Redirige al usuario a la vista de los estudiantes '/views/students.html'
+        }
       },
       error: (xhr) => {
         if (xhr.status === 403) {
