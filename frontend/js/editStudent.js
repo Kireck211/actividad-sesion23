@@ -1,6 +1,6 @@
 function getStudent(id) {
   $.ajax({
-    url: 'http://localhost:3000/students/' + id,
+    url: BASE_URL + 'students/' + id,
     method: 'GET',
     headers: {
       'x-auth': getToken()
