@@ -16,7 +16,7 @@ $(function() {
       success: (data) => {
         const {token} = data;
         localStorage.setItem('token', token);
-        location.href = BASE_URL + 'views/students.html'
+        location.href = '/views/students.html'
       },
       error: (xhr) => {
         if (xhr.status === 403) {

@@ -1,1 +1,0 @@
-const BASE_URL = 'https://students-dasw.herokuapp.com/';
